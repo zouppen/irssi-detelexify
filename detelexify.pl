@@ -5,17 +5,26 @@ $VERSION = '0.1';
 %IRSSI = (
     authors	=> 'Joel "Zouppen" Lehtonen',
     contact	=> 'joel.lehtonen+telex@iki.fi',
-    name	=> 'telexclean',
+    name	=> 'detelexify',
     description	=> 'Alters nickname prefixes coming from a Telegram gateway to real nicknames',
     license	=> 'GPLv3',
-    url		=> 'https://zouppen.iki.fi/projektit/telex',
+    url		=> 'https://github.com/zouppen/irssi-detelexify',
     changed	=> '2016-09-17',
 );
+
+# Known restrictions: There is currently no way to limit the network
+# or the channels that the telex_nicks is allowed to operate. You need
+# to trust it in that sense that if that identity is on your channel,
+# it may inject any message from anybody and you won't notice
+# it.
+#
+# TODO: Channel and network limits for each bot and configuration
+#       without changing the sources
+
 
 # Identities of Telegram gateways
 my %telex_nicks = (
     '~Telex@stream2.magnetismi.fi' => 1,
-    'joell@moskova.liittovaltio.fi' => 1,
     );
 
 sub privmsg {
@@ -32,8 +41,12 @@ sub privmsg {
 		Irssi::signal_emit("event part", $server, $chan, $real_nick, $address);
 		Irssi::signal_stop();
 	    } else {
-		# Always join even if we didn't see the join msg
-		Irssi::signal_emit("event join", $server, $chan, $real_nick, $address);
+		# Join a participant if it's not already joined
+		if (!defined $server->channel_find($chan)->nick_find($real_nick)) {
+		    Irssi::signal_emit("event join", $server, $chan, $real_nick, $address);
+		}
+
+		# Then process the actual message
 		if ($real_msg eq '<new_chat_participant>') {
 		    # Suppress the join message
 		    Irssi::signal_stop();
