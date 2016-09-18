@@ -12,7 +12,7 @@ Instead of
 you will get
 
 ```
-12:35 <Michael> tehdäänpä sit näin :)
+12:35 < Michael> tehdäänpä sit näin :)
 ```
 
 This script also handles joins and parts as when people join and leave
@@ -21,11 +21,11 @@ tab-completion of the nicks.
 
 ## Installation
 
-Place [detelexify.pl] under `~/.irssi/scripts/autorun/` on your irssi
-server. Edit the script by adding your Telegram gateway idents to the
-array `%telex_nicks`. Then run the script in irssi:
+Place [detelexify.pl](detelexify.pl) under `~/.irssi/scripts/autorun/`
+on your irssi server. Edit the script by adding your Telegram gateway
+idents to the array `%telex_nicks`. Then run the script in irssi:
 
-      /run detelexify
+	/run detelexify
 
 Enjoy!
 
