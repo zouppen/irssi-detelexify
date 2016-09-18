@@ -35,7 +35,6 @@ sub privmsg {
 
 	# Check if content matches.
 	if (defined $chan && defined $real_nick && defined $real_msg) {
-	    print($real_msg);
 	    if ($real_msg eq '<left_chat_participant>') {
 		# Produce part event and suppress the message
 		Irssi::signal_emit("event part", $server, $chan, $real_nick, $address);

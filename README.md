@@ -25,7 +25,7 @@ Place [detelexify.pl](detelexify.pl) under `~/.irssi/scripts/autorun/`
 on your irssi server. Edit the script by adding your Telegram gateway
 idents to the array `%telex_nicks`. Then run the script in irssi:
 
-	/run detelexify
+	/run ~/.irssi/scripts/autorun/detelexify.pl
 
 Enjoy!
 
