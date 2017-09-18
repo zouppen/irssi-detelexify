@@ -24,13 +24,23 @@ $VERSION = '0.1';
 
 # Identities of Telegram gateways
 my %telex_nicks = (
-    '~Telex@stream2.magnetismi.fi' => 1,
+    '*!~Telex@stream2.magnetismi.fi' => 1,
     );
+
+sub find_mask {
+    my ( $server, $nick, $address ) = @_;
+    while (my($mask, $v) = each %telex_nicks) {
+        if ( $server->mask_match_address($mask, $nick, $address) ) {
+            return $v;
+        }
+    }
+    return 0;
+}
 
 sub privmsg {
     my ($server, $data, $nick, $address) = @_;
     # Check if ident matches the Telegram gateway.
-    if ( $telex_nicks{$address} ) {
+    if ( find_mask($server, $nick, $address) ) {
 	my ($chan, $real_nick, $real_msg) = ($data =~ /([^ ]*) :\[([^\[]*)\] (.*)/);
 
 	# Check if content matches.
