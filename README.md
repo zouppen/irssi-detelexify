@@ -33,12 +33,12 @@ Enjoy!
 
 The script currently has no channel and network limits for the
 Telegram gateway bots. They can act as any user on the channels they
-are joined into.
+are joined into. #3
 
 The nicks joined into that channel are not present in your IRC network
 in real. Therefore you need to be careful when sending private
 messages to those nicks. The messages will be received by someone else
-if there's such nickname in the same network.
+if there's such nickname in the same network. #4
 
 There is no way to distinguish the person if he/she is joined the
 channel via Telegram and real IRC. That's the idea of this script, the
