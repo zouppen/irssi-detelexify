@@ -1,12 +1,12 @@
 <!-- -*- mode: markdown; coding: utf-8 -*- -->
 # irssi-detelexify
 
-Make Telegram gateway users to look like IRC users in irssi
+Make Matrix or Telegram gateway users to look like IRC users in irssi
 
 Instead of
 
 ```
-12:35 < Telex> [Michael] tehdäänpä sit näin :)
+12:35 < Telex> <Michael> tehdäänpä sit näin :)
 ```
 
 you will get
@@ -22,7 +22,7 @@ tab-completion of the nicks.
 ## Installation
 
 Place [detelexify.pl](detelexify.pl) under `~/.irssi/scripts/autorun/`
-on your irssi server. Edit the script by adding your Telegram gateway
+on your irssi server. Edit the script by adding your Matrix / Telegram gateway
 idents to the array `%telex_nicks`. Then run the script in irssi:
 
 	/run ~/.irssi/scripts/autorun/detelexify.pl
@@ -40,8 +40,8 @@ in real. Therefore you need to be careful when sending private
 messages to those nicks. The messages will be received by someone else
 if there's such nickname in the same network. [#4](https://github.com/zouppen/irssi-detelexify/issues/4)
 
-There is no way to distinguish the person if he/she is joined the
-channel via Telegram and real IRC. That's the idea of this script, the
+There is no way to distinguish the person if they is joined the
+channel via Matrix and real IRC. That's the idea of this script, the
 same nickname may be used on both networks and it produces no nickname
 pollution if you are using both networks.
 
