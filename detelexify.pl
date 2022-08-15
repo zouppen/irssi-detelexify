@@ -41,7 +41,7 @@ sub privmsg {
     my ($server, $data, $nick, $address) = @_;
     # Check if ident matches the Telegram gateway.
     if ( find_mask($server, $nick, $address) ) {
-	my ($chan, $real_nick, $real_msg) = ($data =~ /([^ ]*) :\[([^\[]*)\] (.*)/);
+	my ($chan, $real_nick, $real_msg) = ($data =~ /([^ ]*) :<([^\[]*)> (.*)/);
 
 	# Check if content matches.
 	if (defined $chan && defined $real_nick && defined $real_msg) {
