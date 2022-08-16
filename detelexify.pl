@@ -25,6 +25,7 @@ $VERSION = '0.1';
 # Identities of Telegram gateways
 my %telex_nicks = (
     '*!mx@matrix.hacklab.fi' => 1,
+    '*!mx@morpheus.hacklab.fi' => 1,
     );
 
 sub find_mask {
