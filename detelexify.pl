@@ -1,7 +1,7 @@
 use strict;
 use vars qw($VERSION %IRSSI);
 
-$VERSION = '0.1';
+$VERSION = '0.1.1';
 %IRSSI = (
     authors	=> 'Joel "Zouppen" Lehtonen',
     contact	=> 'joel.lehtonen+telex@iki.fi',
@@ -9,7 +9,7 @@ $VERSION = '0.1';
     description	=> 'Alters nickname prefixes coming from a Matrix or Telegram gateway to real nicknames',
     license	=> 'GPLv3',
     url		=> 'https://github.com/zouppen/irssi-detelexify',
-    changed	=> '2016-09-17',
+    changed	=> '2022-08-18',
 );
 
 # Known restrictions: There is currently no way to limit the network
