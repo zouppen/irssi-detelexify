@@ -6,7 +6,7 @@ Make Matrix or Telegram gateway users to look like IRC users in irssi
 Instead of
 
 ```
-12:35 < Telex> <Michael> tehdäänpä sit näin :)
+12:35 < mx> <Michael> tehdäänpä sit näin :)
 ```
 
 you will get
