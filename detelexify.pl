@@ -1,7 +1,7 @@
 use strict;
 use vars qw($VERSION %IRSSI);
 
-$VERSION = '0.1.2';
+$VERSION = '0.1.3';
 %IRSSI = (
     authors	=> 'Joel "Zouppen" Lehtonen',
     contact	=> 'joel.lehtonen+telex@iki.fi',
@@ -9,7 +9,7 @@ $VERSION = '0.1.2';
     description	=> 'Alters nickname prefixes coming from a Matrix or Telegram gateway to real nicknames',
     license	=> 'GPLv3',
     url		=> 'https://github.com/zouppen/irssi-detelexify',
-    changed	=> '2022-08-22',
+    changed	=> '2025-10-04',
 );
 
 # Known restrictions: There is currently no way to limit the network
@@ -24,8 +24,7 @@ $VERSION = '0.1.2';
 
 # Identities of Telegram gateways
 my @telex_nicks = (
-    '*!mx@matrix.hacklab.fi',
-    '*!mx@morpheus.hacklab.fi',
+    '*!mx@irc.hacklab.fi',
     );
 
 sub find_mask {
